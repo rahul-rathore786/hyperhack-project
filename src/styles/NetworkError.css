@@ -1,0 +1,115 @@
+.network-error-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.network-error-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 90%;
+  max-width: 480px;
+  padding: 2rem;
+}
+
+.network-error-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.network-error-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #dc2626;
+  margin-right: 1rem;
+}
+
+.network-error-header h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.network-error-content {
+  margin-bottom: 2rem;
+}
+
+.network-error-content p {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.network-details {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.network-detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.network-detail-item:not(:last-child) {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.network-value {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.network-error-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.switch-network-btn,
+.add-network-btn {
+  flex: 1;
+  padding: 0.75rem 0;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.switch-network-btn {
+  background: #eab308;
+  color: white;
+}
+
+.switch-network-btn:hover {
+  background: #ca8a04;
+}
+
+.add-network-btn {
+  background: white;
+  border: 1px solid #94a3b8;
+  color: #334155;
+}
+
+.add-network-btn:hover {
+  background: #f1f5f9;
+}
+
+@media (max-width: 480px) {
+  .network-error-actions {
+    flex-direction: column;
+  }
+}
