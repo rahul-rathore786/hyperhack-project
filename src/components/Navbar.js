@@ -1,20 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Navbar.css';
 
 function Navbar({ account, connectWallet, setPage, isOwner, coinBalance }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  
+  // Toggle mobile menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close menu when a navigation option is clicked
+  const handleNavClick = (page) => {
+    setPage(page);
+    setIsMenuOpen(false);
+  };
+  
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // Clean up event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
-    <div className="navbar">
-      <div className="navbar-logo" onClick={() => setPage('home')}>
+    <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-logo" onClick={() => handleNavClick('home')}>
         <span className="logo-text">NoRiskPot</span>
         <span className="logo-subtitle">Zero Loss Lottery</span>
       </div>
       
-      <div className="navbar-links">
-        <button className="nav-link" onClick={() => setPage('home')}>Home</button>
-        <button className="nav-link" onClick={() => setPage('buy')}>Buy Tickets</button>
-        <button className="nav-link" onClick={() => setPage('claim')}>Claim Funds</button>
+      <button className="mobile-menu-btn" onClick={toggleMenu}>
+        {isMenuOpen ? '✕' : '☰'}
+      </button>
+      
+      <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
+        <button className="nav-link" onClick={() => handleNavClick('home')}>Home</button>
+        <button className="nav-link" onClick={() => handleNavClick('buy')}>Buy Tickets</button>
+        <button className="nav-link" onClick={() => handleNavClick('claim')}>Claim Funds</button>
         {isOwner && (
-          <button className="nav-link admin" onClick={() => setPage('admin')}>Admin Panel</button>
+          <button className="nav-link admin" onClick={() => handleNavClick('admin')}>Admin Panel</button>
         )}
       </div>
       
