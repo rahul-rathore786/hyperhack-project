@@ -28,40 +28,40 @@ This creates a no-loss lottery system where participants can enjoy the excitemen
 ### 🏠 Home Page
 
 **Home Page - View 1**  
-![Home Page - View 1](./frontend/public/home1.png)
+![Home Page - View 1](./public/home1.png)
 
 **Home Page - View 2**  
-![Home Page - View 2](./frontend/public/home2.png)
+![Home Page - View 2](./public/home2.png)
 
 **Home Page - View 3**  
-![Home Page - View 3](./frontend/public/home3.png)
+![Home Page - View 3](./public/home3.png)
 
 ### 🎟️ Buy Ticket Page
 
 **Buy Ticket - Step 1**  
-![Buy Ticket - Step 1](./frontend/public/buy_tkt.png)
+![Buy Ticket - Step 1](./public/buy_tkt.png)
 
 **Buy Ticket - Step 2**  
-![Buy Ticket - Step 2](./frontend/public/buy_tkt2.png)
+![Buy Ticket - Step 2](./public/buy_tkt2.png)
 
 ### 🛠️ Admin Dashboard
 
 **Admin Page - view-1**  
-![Admin Page - Lottery Overview](./frontend/public/adminpage1.png)
+![Admin Page - Lottery Overview](./public/adminpage1.png)
 
 **Admin Page - view-2**  
-![Admin Page - Manage Tickets](./frontend/public/adminpage2.png)
+![Admin Page - Manage Tickets](./public/adminpage2.png)
 
 **Admin Page - view-3**  
-![Admin Page - Winners List](./frontend/public/adminpage3.png)
+![Admin Page - Winners List](./public/adminpage3.png)
 
 **Admin Page - view-4**  
-![Admin Page - Withdraw Funds](./frontend/public/adminpage4.png)
+![Admin Page - Withdraw Funds](./public/adminpage4.png)
 
 ### 💰 Claim Fund Page
 
 **Claim Fund Page**  
-![Claim Fund Page](./frontend/public/claim_fund_page.png)
+![Claim Fund Page](./public/claim_fund_page.png)
 
 ## Project Structure
 
