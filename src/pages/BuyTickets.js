@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import "../styles/BuyTickets.css";
-import CoinFaucetInfo from "../components/CoinFaucetInfo";
+
 
 function BuyTickets({
   lotteryContract,
@@ -114,7 +114,7 @@ function BuyTickets({
 
   // Show COIN Faucet Info if user has no COIN
   if (parseFloat(lotteryData.coinBalance) === 0) {
-    return <CoinFaucetInfo />;
+    return null; /* Or some other placeholder if you want */
   }
 
   return (
