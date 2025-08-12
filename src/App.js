@@ -373,7 +373,7 @@ function App() {
     <div className="app">
       <Navbar
         account={account}
-        connectWallet={initProvider}
+        connectWallet={() => initProvider()}
         setPage={setPage}
         isOwner={isOwner}
         coinBalance={lotteryData.coinBalance}
