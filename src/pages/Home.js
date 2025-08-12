@@ -35,17 +35,6 @@ function Home({ lotteryData, setPage, isOwner }) {
             Claim Your Funds
           </button>
         )}
-
-        {parseFloat(lotteryData.coinBalance) === 0 && (
-          <div className="coin-info">
-            <p>
-              Need COIN tokens to play?{" "}
-              <button onClick={() => setPage("buy")} className="coin-link">
-                Get COIN here
-              </button>
-            </p>
-          </div>
-        )}
       </div>
       {lotteryData.drawCompleted && lotteryData.winner && (
         <div className="winner-section">
