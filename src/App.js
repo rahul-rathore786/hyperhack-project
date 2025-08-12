@@ -69,13 +69,12 @@ function App() {
 
         const networkId = await web3Provider.getNetwork();
 
-        // Check if connected to Sepolia testnet (chainId 11155111)
-        if (networkId.chainId !== 11155111) {
+        // Check if connected to Polygon Testnet (chainId 80002)
+        if (networkId.chainId !== 80002) {
           setNetworkError({
             currentNetwork: networkId.name,
             currentChainId: networkId.chainId,
-            requiredNetwork: "Sepolia",
-            requiredChainId: 11155111,
+            requiredChainId: 80002,
           });
           return;
         } else {
@@ -279,25 +278,25 @@ function App() {
     }
   }, [account, lotteryContract, coinContract]);
 
-  // Function to switch to Sepolia network
-  const switchToSepoliaNetwork = async () => {
+  // Function to switch correct network
+  const switchToNetwork = async () => {
     if (!window.ethereum) return;
 
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0xaa36a7" }], // chainId for Sepolia: 0xaa36a7 (11155111 in decimal)
+        params: [{ chainId: "0x13882" }], // chainId for correct network
       });
     } catch (error) {
       // This error code indicates that the chain has not been added to MetaMask
       if (error.code === 4902) {
-        addSepoliaNetwork();
+        addNetwork();
       }
     }
   };
 
-  // Function to add Sepolia network to wallet
-  const addSepoliaNetwork = async () => {
+  // Function to add correct network to wallet
+  const addNetwork = async () => {
     if (!window.ethereum) return;
 
     try {
@@ -305,20 +304,20 @@ function App() {
         method: "wallet_addEthereumChain",
         params: [
           {
-            chainId: "0xaa36a7",
-            chainName: "Sepolia Testnet",
+            chainId: "0x13882",
+            chainName: "Polygon Testnet",
             nativeCurrency: {
-              name: "Sepolia Ether",
-              symbol: "ETH",
+              name: "Polygon Testnet",
+              symbol: "POL",
               decimals: 18,
             },
-            rpcUrls: ["https://sepolia.infura.io/v3/"],
-            blockExplorerUrls: ["https://sepolia.etherscan.io/"],
+            rpcUrls: ["https://rpc-amoy.polygon.technology"],
+            blockExplorerUrls: ["https://explorer.polygon.technology/"],
           },
         ],
       });
     } catch (error) {
-      console.error("Error adding Sepolia network", error);
+      console.error("Error adding correct network", error);
     }
   };
 
@@ -384,8 +383,8 @@ function App() {
       {networkError && (
         <NetworkError
           networkError={networkError}
-          onSwitchNetwork={switchToSepoliaNetwork}
-          onAddNetwork={addSepoliaNetwork}
+          onSwitchNetwork={switchToNetwork}
+          onAddNetwork={addNetwork}
         />
       )}
     </div>

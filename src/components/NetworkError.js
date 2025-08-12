@@ -18,7 +18,7 @@ const NetworkError = ({
         
         <div className="network-error-content">
           <p>
-            This application requires the <strong>Sepolia Testnet</strong> to function properly.
+            This application requires the <strong>Polygon Testnet</strong> to function properly.
           </p>
           <div className="network-details">
             <div className="network-detail-item">
@@ -27,17 +27,17 @@ const NetworkError = ({
             </div>
             <div className="network-detail-item">
               <span>Required Network:</span>
-              <span className="network-value">Sepolia Testnet</span>
+              <span className="network-value">Polygon Testnet</span>
             </div>
           </div>
         </div>
         
         <div className="network-error-actions">
           <button onClick={onSwitchNetwork} className="switch-network-btn">
-            Switch to Sepolia
+            Switch to Polygon Testnet
           </button>
           <button onClick={onAddNetwork} className="add-network-btn">
-            Add Sepolia to Wallet
+            Add Polygon Testnet to Wallet
           </button>
         </div>
       </div>
