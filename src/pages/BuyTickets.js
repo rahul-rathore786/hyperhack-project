@@ -112,9 +112,58 @@ function BuyTickets({
     }
   };
 
+  // Get test COIN function
+  const mintTestCoin = async () => {
+    if (!coinContract) return;
+    
+    setLoading(true);
+    setMessage({ text: "Getting test COIN...", type: "info" });
+    
+    try {
+      // Call the getTokens function on the coin contract
+      const tx = await coinContract.getTokens();
+      await tx.wait();
+      
+      setMessage({
+        text: "Successfully received 100 test COIN!",
+        type: "success"
+      });
+      refreshData();
+    } catch (error) {
+      console.error("Error getting test COIN:", error);
+      setMessage({
+        text: "Failed to get test COIN. Please try again.",
+        type: "error"
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Show COIN Faucet Info if user has no COIN
   if (parseFloat(lotteryData.coinBalance) === 0) {
-    return null; /* Or some other placeholder if you want */
+    return (
+      <div className="coin-faucet-popup">
+        <div className="coin-faucet-card">
+          <h2>You need COIN to participate</h2>
+          <p>You currently have 0 COIN in your wallet. This is a test application, so you can mint some test COIN to get started.</p>
+          
+          <button 
+            onClick={mintTestCoin} 
+            disabled={loading} 
+            className="mint-coin-button"
+          >
+            {loading ? "Getting..." : "Get 100 Test COIN"}
+          </button>
+          
+          {message.text && (
+            <div className={`message ${message.type}`}>
+              {message.text}
+            </div>
+          )}
+        </div>
+      </div>
+    );
   }
 
   return (
