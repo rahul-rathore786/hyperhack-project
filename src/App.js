@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import "./App.css";
-import contractAddresses from "./contracts/addresses.json";
+import contractAddresses from "./artifacts/addresses.json";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -52,18 +52,18 @@ function App() {
         } else {
           accounts = await web3Provider.listAccounts();
         }
-        
+
         // Check if we have any accounts before proceeding
         if (!accounts || accounts.length === 0) {
           // Only log if we were expecting an account (i.e., on reconnect)
-          if(skipAccountRequest) {
+          if (skipAccountRequest) {
             console.log("No accounts available for reconnection.");
           }
           // Clear connection state and stop execution
           setAccount("");
           setProvider(null);
           setSigner(null);
-          localStorage.setItem('walletConnected', 'false');
+          localStorage.setItem("walletConnected", "false");
           return;
         }
 
@@ -141,7 +141,7 @@ function App() {
       const coinBalance = await coin.balanceOf(address);
       const isWinner = await lottery.isWinner(address);
       const hasClaimed = await lottery.hasClaimed(address);
-      
+
       // Get winner information if draw is completed
       let winner = "";
       let secondWinner = "";
