@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import "../styles/BuyTickets.css";
 
-
 function BuyTickets({
   lotteryContract,
   coinContract,
@@ -115,25 +114,25 @@ function BuyTickets({
   // Get test COIN function
   const mintTestCoin = async () => {
     if (!coinContract) return;
-    
+
     setLoading(true);
     setMessage({ text: "Getting test COIN...", type: "info" });
-    
+
     try {
       // Call the getTokens function on the coin contract
       const tx = await coinContract.getTokens();
       await tx.wait();
-      
+
       setMessage({
         text: "Successfully received 100 test COIN!",
-        type: "success"
+        type: "success",
       });
       refreshData();
     } catch (error) {
       console.error("Error getting test COIN:", error);
       setMessage({
         text: "Failed to get test COIN. Please try again.",
-        type: "error"
+        type: "error",
       });
     } finally {
       setLoading(false);
@@ -146,20 +145,21 @@ function BuyTickets({
       <div className="coin-faucet-popup">
         <div className="coin-faucet-card">
           <h2>You need COIN to participate</h2>
-          <p>You currently have 0 COIN in your wallet. This is a test application, so you can mint some test COIN to get started.</p>
-          
-          <button 
-            onClick={mintTestCoin} 
-            disabled={loading} 
+          <p>
+            You currently have 0 COIN in your wallet. This is a test
+            application, so you can mint some test COIN to get started.
+          </p>
+
+          <button
+            onClick={mintTestCoin}
+            disabled={loading}
             className="mint-coin-button"
           >
             {loading ? "Getting..." : "Get 100 Test COIN"}
           </button>
-          
+
           {message.text && (
-            <div className={`message ${message.type}`}>
-              {message.text}
-            </div>
+            <div className={`message ${message.type}`}>{message.text}</div>
           )}
         </div>
       </div>
@@ -205,7 +205,7 @@ function BuyTickets({
             </div>
           </div>
 
-          <div className="ticket-selection " style={{textAlign: "center"}}>
+          <div className="ticket-selection " style={{ textAlign: "center" }}>
             <h3>Select Number of Tickets</h3>
             <div className="ticket-input-wrapper">
               <button
@@ -271,20 +271,6 @@ function BuyTickets({
                 {loading ? "Processing..." : "Buy Tickets"}
               </button>
             )}
-          </div>
-
-          <div className="faucet-reminder">
-            <p>
-              Need more COIN?{" "}
-              <a
-                href="https://faucet.paxos.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="faucet-link"
-              >
-                Access the COIN Faucet
-              </a>
-            </p>
           </div>
         </div>
       )}
