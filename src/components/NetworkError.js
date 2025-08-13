@@ -24,8 +24,7 @@ const NetworkError = ({ networkError, onSwitchNetwork, onAddNetwork }) => {
 
         <div className="network-error-content">
           <p>
-            This application requires the <strong>Polygon Testnet</strong> to
-            function properly.
+            This application requires the <strong>Morph Testnet</strong> to function properly.
           </p>
           <div className="network-details">
             <div className="network-detail-item">
@@ -36,7 +35,7 @@ const NetworkError = ({ networkError, onSwitchNetwork, onAddNetwork }) => {
             </div>
             <div className="network-detail-item">
               <span>Required Network:</span>
-              <span className="network-value">Polygon Testnet</span>
+              <span className="network-value">Morph Testnet</span>
             </div>
           </div>
         </div>

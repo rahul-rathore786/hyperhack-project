@@ -69,12 +69,12 @@ function App() {
 
         const networkId = await web3Provider.getNetwork();
 
-        // Check if connected to Polygon Testnet (chainId 80002)
-        if (networkId.chainId !== 80002) {
+        // Check if connected to Morph Testnet (chainId 2810)
+        if (networkId.chainId !== 2810) {
           setNetworkError({
             currentNetwork: networkId.name,
             currentChainId: networkId.chainId,
-            requiredChainId: 80002,
+            requiredChainId: 2810,
           });
           return;
         } else {
@@ -285,7 +285,7 @@ function App() {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x13882" }], // chainId for correct network
+        params: [{ chainId: "0xafa" }], // chainId for Morph Testnet: 2810
       });
     } catch (error) {
       // This error code indicates that the chain has not been added to MetaMask
@@ -304,15 +304,15 @@ function App() {
         method: "wallet_addEthereumChain",
         params: [
           {
-            chainId: "0x13882",
-            chainName: "Polygon Testnet",
+            chainId: "0xafa",
+            chainName: "Morph Testnet",
             nativeCurrency: {
-              name: "Polygon Testnet",
-              symbol: "POL",
+              name: "ETH",
+              symbol: "ETH",
               decimals: 18,
             },
-            rpcUrls: ["https://rpc-amoy.polygon.technology"],
-            blockExplorerUrls: ["https://explorer.polygon.technology/"],
+            rpcUrls: ["https://rpc-quicknode-holesky.morphl2.io"],
+            blockExplorerUrls: ["https://explorer-holesky.morphl2.io/"],
           },
         ],
       });
