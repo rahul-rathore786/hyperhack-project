@@ -2,9 +2,9 @@
 
 ## 🔗 Live Website
 
-Visit the live version here: [https://no-risk-pot-final.vercel.app/](https://no-risk-pot-final.vercel.app/)
+- Visit the live version [click here](https://no-risk-pot-v2-final.vercel.app/)
 
-Presentation Link [Here](https://drive.google.com/file/d/18ypsebB1qEJnlcXQunI3V5tO5rs4JzAw/view?usp=drive_link)
+- Presentation [Link Here](https://www.youtube.com/watch?v=MwpnkbAAaoQ)
 
 ## Project Overview
 
@@ -38,11 +38,8 @@ This creates a no-loss lottery system where participants can enjoy the excitemen
 
 ### 🎟️ Buy Ticket Page
 
-**Buy Ticket - Step 1**  
+**Buy Ticket using COIN**  
 ![Buy Ticket - Step 1](./public/buy_tkt.png)
-
-**Buy Ticket - Step 2**  
-![Buy Ticket - Step 2](./public/buy_tkt2.png)
 
 ### 🛠️ Admin Dashboard
 
@@ -54,9 +51,6 @@ This creates a no-loss lottery system where participants can enjoy the excitemen
 
 **Admin Page - view-3**  
 ![Admin Page - Winners List](./public/adminpage3.png)
-
-**Admin Page - view-4**  
-![Admin Page - Withdraw Funds](./public/adminpage4.png)
 
 ### 💰 Claim Fund Page
 
