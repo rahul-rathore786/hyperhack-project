@@ -69,12 +69,12 @@ function App() {
 
         const networkId = await web3Provider.getNetwork();
 
-        // Check if connected to Morph Testnet (chainId 2810)
-        if (networkId.chainId !== 2810) {
+        // Check if connected to Hyperion Testnet (chainId 2810)
+        if (networkId.chainId !== 133717) {
           setNetworkError({
             currentNetwork: networkId.name,
             currentChainId: networkId.chainId,
-            requiredChainId: 2810,
+            requiredChainId: 133717,
           });
           return;
         } else {
@@ -285,7 +285,7 @@ function App() {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0xafa" }], // chainId for Morph Testnet: 2810
+        params: [{ chainId: "0x20A55" }], // chainId for Hyperion Testnet: 133717
       });
     } catch (error) {
       // This error code indicates that the chain has not been added to MetaMask
@@ -304,15 +304,17 @@ function App() {
         method: "wallet_addEthereumChain",
         params: [
           {
-            chainId: "0xafa",
-            chainName: "Morph Testnet",
+            chainId: "0x20A55",
+            chainName: "Hyperion Testnet",
             nativeCurrency: {
-              name: "ETH",
-              symbol: "ETH",
+              name: "METIS",
+              symbol: "hMETIS",
               decimals: 18,
             },
-            rpcUrls: ["https://rpc-quicknode-holesky.morphl2.io"],
-            blockExplorerUrls: ["https://explorer-holesky.morphl2.io/"],
+            rpcUrls: ["https://hyperion-testnet.metisdevops.link"],
+            blockExplorerUrls: [
+              "https://hyperion-testnet-explorer.metisdevops.link/",
+            ],
           },
         ],
       });
