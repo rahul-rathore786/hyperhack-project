@@ -2,7 +2,7 @@
 
 ## 🔗 Live Website
 
-- Visit the live version [click here](https://no-risk-pot-v2-final.vercel.app/)
+- Visit the live version [click here]https://no-risk-pot-hyper.vercel.app/)
 
 - Presentation [Link Here](https://www.youtube.com/watch?v=MwpnkbAAaoQ)
 
