@@ -124,10 +124,10 @@ frontend/
 
 Contracts are already deployed. You can verify them on the explorer below:
 
-- Coin: `0x2597aC5685d4887858a2D2ED629b78ce70f2D590`
-  - Explorer: https://explorer-holesky.morphl2.io/address/0x2597aC5685d4887858a2D2ED629b78ce70f2D590
-- ZeroLossLottery: `0x5c7FbBF922643eaea24F4Cf7FD2F220e70659Ce7`
-  - Explorer: https://explorer-holesky.morphl2.io/address/0x5c7FbBF922643eaea24F4Cf7FD2F220e70659Ce7
+- Coin: `0xfe0C32da50e19c146df542e32FE6473a46bB0D63`
+  - Explorer: https://hyperion-testnet-explorer.metisdevops.link/address/0xfe0C32da50e19c146df542e32FE6473a46bB0D63
+- ZeroLossLottery: `0x4e5156FC83669B999FeC29981A5363CE6D1021b9`
+  - Explorer: https://hyperion-testnet-explorer.metisdevops.link/address/0x4e5156FC83669B999FeC29981A5363CE6D1021b9
 
 > Note: The frontend reads addresses from `frontend/src/artifacts/addresses.json`.
 
