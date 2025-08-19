@@ -60,96 +60,76 @@ This creates a no-loss lottery system where participants can enjoy the excitemen
 ## Project Structure
 
 ```
-no_risk_pot_v1/
-├── contracts/           # Smart contracts written in Solidity
-├── scripts/             # Deployment and other utility scripts
-├── test/                # Contract test files
-├── frontend/            # React-based frontend application
-│   ├── public/          # Static files
-│   └── src/             # React components and logic
-├── hardhat.config.js    # Hardhat configuration
-└── package.json         # Project dependencies and scripts
+frontend/
+├── public/
+│   ├── index.html
+│   └── *.png (screenshots)
+├── src/
+│   ├── App.js
+│   ├── index.js
+│   ├── components/
+│   │   └── NetworkError.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── BuyTickets.js
+│   │   ├── AdminPanel.js
+│   │   └── ClaimFunds.js
+│   ├── styles/
+│   │   ├── Home.css
+│   │   ├── BuyTickets.css
+│   │   ├── AdminPanel.css
+│   │   ├── Navbar.css
+│   │   └── NetworkError.css
+│   └── artifacts/
+│       └── addresses.json
+├── package.json
+├── pnpm-lock.yaml
+└── README.md
 ```
 
-## Setup and Installation
+## 🚀 How to Run the Frontend
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
-- MetaMask or another Web3 wallet
-- Access to COIN
+- Node.js 18 LTS recommended
+- npm or pnpm
+- MetaMask (or a compatible EVM wallet)
 
-## Required APIs and Credentials
+### Steps
 
-The project requires the following external services and credentials:
+1. Install dependencies
 
-1. **Ethereum RPC URL**: For connecting to the Sepolia testnet
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
 
-   - You can use Infura, Alchemy, or Google's Blockchain Node Engine
-   - Add this to your `.env` file as `SEPOLIA_RPC_URL`
+2. Start the development server
 
-2. **Private Key**: Your Ethereum wallet private key
-   - Export from MetaMask (use a development account, not your main wallet)
-   - Add this to your `.env` file as `PRIVATE_KEY`
-   - CAUTION: Never share your private key or commit it to version control
+   ```bash
+   npm start
+   # or
+   pnpm start
+   ```
 
-### Installation Steps
+3. Open http://localhost:3000 in your browser.
 
-1. Clone the repository
+### Network
 
-```bash
-git clone https://github.com/rahul-rathore786/No_Risk_Pot.git
-cd No_Risk_Pot
-```
+- The dApp targets the Morph Testnet (chainId 2810). If you are on another network, the app will prompt you to switch or add the network automatically.
+- You may need some test ETH on Morph to perform transactions.
 
-2. Install dependencies for the main project (smart contracts)
+## 📜 Deployed Contracts (Morph Testnet)
 
-```bash
-npm install
-```
+Contracts are already deployed. You can verify them on the explorer below:
 
-3. Install dependencies for the frontend
+- Coin: `0x2597aC5685d4887858a2D2ED629b78ce70f2D590`
+  - Explorer: https://explorer-holesky.morphl2.io/address/0x2597aC5685d4887858a2D2ED629b78ce70f2D590
+- ZeroLossLottery: `0x5c7FbBF922643eaea24F4Cf7FD2F220e70659Ce7`
+  - Explorer: https://explorer-holesky.morphl2.io/address/0x5c7FbBF922643eaea24F4Cf7FD2F220e70659Ce7
 
-```bash
-cd frontend
-npm install
-cd ..
-```
-
-4. Create a `.env` file in the root directory with the following variables:
-
-```
-PRIVATE_KEY=your_wallet_private_key
-SEPOLIA_RPC_URL=your_sepolia_rpc_url
-```
-
-## Running the Project
-
-### Deploying Smart Contracts
-
-1. Compile the contracts
-
-```bash
-npx hardhat compile
-```
-
-2. Deploy to a test network (e.g., Sepolia)
-
-```bash
-npx hardhat run scripts/deploy.js --network sepolia
-```
-
-### Running the Frontend
-
-1. Start the development server
-
-```bash
-cd frontend
-npm start
-```
-
-2. The application will be available at `http://localhost:3000`
+> Note: The frontend reads addresses from `frontend/src/artifacts/addresses.json`.
 
 ## Security Considerations
 
