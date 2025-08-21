@@ -2,9 +2,9 @@
 
 ## 🔗 Live Website
 
-- Visit the live version [click here]https://no-risk-pot-hyper.vercel.app/)
+- Visit the [live version](https://no-risk-pot-hyper.vercel.app/)
 
-- Presentation [Link Here](https://www.youtube.com/watch?v=MwpnkbAAaoQ)
+- Presentation [Click Here](https://www.youtube.com/watch?v=MwpnkbAAaoQ)
 
 ## Project Overview
 
@@ -120,7 +120,7 @@ frontend/
 - The dApp targets the Morph Testnet (chainId 2810). If you are on another network, the app will prompt you to switch or add the network automatically.
 - You may need some test ETH on Morph to perform transactions.
 
-## 📜 Deployed Contracts (Morph Testnet)
+## 📜 Deployed Contracts (Hyperion Testnet)
 
 Contracts are already deployed. You can verify them on the explorer below:
 
@@ -137,7 +137,3 @@ Contracts are already deployed. You can verify them on the explorer below:
 - Never commit sensitive keys or secrets to version control
 - Use a dedicated development wallet with limited funds for testing
 - Consider using a hardware wallet for production deployments
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
