@@ -117,8 +117,8 @@ frontend/
 
 ### Network
 
-- The dApp targets the Morph Testnet (chainId 2810). If you are on another network, the app will prompt you to switch or add the network automatically.
-- You may need some test ETH on Morph to perform transactions.
+- The dApp targets the Hyperion Testnet. If you are on another network, the app will prompt you to switch or add the network automatically.
+- You may need some test COIN on Hyperion Testnet to perform transactions.
 
 ## 📜 Deployed Contracts (Hyperion Testnet)
 
